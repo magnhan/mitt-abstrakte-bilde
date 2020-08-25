@@ -23,6 +23,10 @@ body {
 .horizontalWrapperModifier{
     flex-direction: row;
 }
+svg{
+    fill:#131f53;
+    stroke-width:"0";
+}
 
 p{
     color:red;
