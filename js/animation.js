@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $("#winterSky").hide();
+    $("svg").mouseenter(function(){
+        $("#svgBird").fadeOut();
+        $("#winterSky").fadeIn();
+        $("#sun").fadeOut();
+    });
+    $("svg").mouseleave(function(){
+        $("#svgBird").fadeIn();
+        $("#winterSky").fadeOut();
+        $("#sun").fadeIn();
+    });
+})
