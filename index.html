@@ -6,22 +6,47 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("svgBird").hide();
+                });
+            });
+        </script>
     </head>
     <body>
         <main class="wrapper">
             <div class="art" class="wrapper" >
                 <h1>Hotspur on toast</h1>
-                <svg width="200" height="300">
-                    <circle cx="70" cy="250" r="40"/>
-                    <rect x="170" y="100" width="10" height="50" transform="rotate(30)"/>
-                    <polygon points="90,190 140,100 190,180"/>
-                    <circle cx="120" cy="115" r="25"/>
-                    <!-- Pathen under er tegnet i Photoshop og eksportert som en path-->
-                    <path transform="scale(1.4) translate(0,-77) rotate(15)" d="M126.824,185S121,165.319,85.647,159.367,48.859,134.548,48,110c15.481,7.1,14.827,9.916,27.059,3.8C91.492,124.632,87.01,131.881,128,131.835,127.907,150.627,126.824,185,126.824,185Z"/>
-                    <circle cx="160" cy="190" r="50" fill="white"/>
-                    <rect x="25" y="10" rx="20" ry="20" width="35" height="70" stroke="#131f53" fill="white" stroke-width="5"/>
-                    <circle cx="15" cy="40" r="25" fill="white" stroke="#131f53" stroke-width="5"/>
-                    <rect x="-23" y="-2" width="50" height="70" fill="white"/>
+                <button>Hide</button>
+                <svg width="400" height="300">
+                    <defs>
+                        <linearGradient id="summerSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" style="stop-color:lightblue;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color: #4498ff;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a0a0a0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #606060;stop-opacity:1" />
+                          </linearGradient>
+                          <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6fc960;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #58a54b;stop-opacity:1" />
+                          </linearGradient>
+                          <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgba(211,164,0,1);
+                            stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:0" />
+                          </radialGradient>
+                      </defs>
+                    <rect width="400" height="300" fill="url(#summerSkyGrad)"/>
+                    <circle cx="250" cy="150" r="100" fill="url(#sunGrad)"/>
+                    <rect width="400" height="50" transform="translate(0,250)" fill="url(#grassGrad)"/>
+                    <polygon points="0,250 60,180 120,250" fill="url(#mountainGrad)"/>
+                    <polygon points="200,250 300,150 400,250" fill="url(#mountainGrad)"/>
+                    <polygon points="80,250 180,120 280,250" fill="url(#mountainGrad)"/>
+                    <path fill="#424242" transform="scale(0.1) translate(2500,1300)" d="M114.791,207.473s-13.825,2.421-12.645,21.389a150.036,150.036,0,0,1,34.773,12.384c11.072,5.678,33.11-3.371,40.042-3.378s55.91,10.6,63.224,10.132a17.565,17.565,0,0,0,11.591-5.629s-40.832-3.2-56.9-23.64c1.175-14.4,3.534-44.232,43.2-82.18S315,60,315,60s-114.62,59.436-134.878,83.305-18.4,48.529-29.5,56.288c-5.736-5.835-22.821-24.748-34.774-30.395-8.56-11.991-31.071-61.636-30.558-78.8C75.9,107.364,72.1,141.866,81.071,161.317s10.129,20.194,22.129,30.4S114.791,207.473,114.791,207.473Z"/>
                 </svg>
                 <p>Pablo Picasso, 1906</p>
             </div>

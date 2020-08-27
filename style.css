@@ -19,6 +19,7 @@ body {
 .art{
     flex-direction: column;
     padding: 2em;
+    text-align: center;
 }
 
 svg{
