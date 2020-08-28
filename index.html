@@ -5,11 +5,103 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-
-        <h1>My abstract picture</h1>
-        <p>red text oooo</p>
-
+        <header>
+            <h1>Claude Potets personlige galleri</h1>
+        </header>
+        <nav class="wrapper">
+            <a href="index.html">Hjem</a>
+            <a href="index.html">Butikk</a>
+            <a href="index.html">Kontakt Claude</a>
+            <a href="index.html">Om Claude</a>
+        </nav>
+        <main class="wrapper">
+            <div class="art" class="wrapper" >
+                <h1>Landskap</h1>
+                <svg width="400" height="300">
+                    <defs>
+                        <linearGradient id="summerSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" style="stop-color:lightblue;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color: #4498ff;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="winterSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:white;stop-opacity:0" />
+                            <stop offset="100%" style="stop-color: white;stop-opacity:1" />
+                          </linearGradient>
+                        <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a0a0a0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #606060;stop-opacity:1" />
+                          </linearGradient>
+                          <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6fc960;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #58a54b;stop-opacity:1" />
+                          </linearGradient>
+                          <linearGradient id="snowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#efefef;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color: #d6d6d6;stop-opacity:1" />
+                          </linearGradient>
+                          <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgba(211,164,0,1);
+                            stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:0" />
+                          </radialGradient>
+                      </defs>
+                    <rect id="summerSky" width="400" height="300" fill="url(#summerSkyGrad)"/>
+                    <rect id="winterSky" width="400" height="300" fill="url(#winterSkyGrad)"/>
+                    <circle id="sun" cx="250" cy="150" r="100" fill="url(#sunGrad)"/>
+                    <rect id="grass" width="400" height="50" transform="translate(0,250)" fill="url(#grassGrad)"/>
+                    <rect id="snow" width="400" height="50" transform="translate(0,250)" fill="url(#snowGrad)"/>
+                    <polygon class="mountain" points="0,250 60,180 120,250" fill="url(#mountainGrad)"/>
+                    <polygon class="mountain" points="200,250 300,150 400,250" fill="url(#mountainGrad)"/>
+                    <polygon class="mountain" points="80,250 180,120 280,250" fill="url(#mountainGrad)"/>
+                    <path id="svgBird" fill="#424242" transform="scale(0.1) translate(2500,1300)" d="M114.791,207.473s-13.825,2.421-12.645,21.389a150.036,150.036,0,0,1,34.773,12.384c11.072,5.678,33.11-3.371,40.042-3.378s55.91,10.6,63.224,10.132a17.565,17.565,0,0,0,11.591-5.629s-40.832-3.2-56.9-23.64c1.175-14.4,3.534-44.232,43.2-82.18S315,60,315,60s-114.62,59.436-134.878,83.305-18.4,48.529-29.5,56.288c-5.736-5.835-22.821-24.748-34.774-30.395-8.56-11.991-31.071-61.636-30.558-78.8C75.9,107.364,72.1,141.866,81.071,161.317s10.129,20.194,22.129,30.4S114.791,207.473,114.791,207.473Z"/>
+                </svg>
+                <p>Claude Potet malte dette bildet med såkalte svg-pensler i 2020. Det viser et landskap i hjembyen Paris med de kjente belgiske alpene i bakgrunnen.</p>
+                <script src="js/jQueryAnimation.js"></script>
+            </div>
+            <div class="art" class="wrapper">
+                <h1>Klesskap</h1>
+                <canvas id="artCanvas" width="400" height="300"></canvas>
+                <p>Claude Potet malte dette bildet med canvas-pensler i 2020. Det har samme motiv som Landskap, men heter Klesskap fordi han synes det var gøy. Det er små forskjeller mellom verkene på grunn av forskjellene i metodene de er malt med.</p>
+                <script src="js/canvasAnimation.js"></script>
+            </div>
+            <div id="docBtn">Dokumentasjon</div>
+            <div id="doc">
+                <dl>
+                    <dt>Flexbox og CSS-grid</dt>
+                        <dd>Jeg valgte å bruke flexbox fordi jeg kun ønsket å plassere elementene på siden i én retning av gangen. Kunstverk m/ tittel og bildetekst skulle i hovedsak stå side om side, mens elementene som inngår i hvert kunstverk skulle stå over hverandre (tittel, kunstverk og bildetekst). Derfor brukte jeg to wrappere for å justere de i retningene de skulle stå. Jeg brukte også flexbox til å justere navigasjonsbaren slik at alle elementene var jevnt fordelt utover bredden til skjermen. Om jeg hadde valgt CSS-grid for å justere kunstverkene, hadde jeg måttet dele opp kunstverkene i tittel, kunst og bildetekst og så justert de seks elementene i samme CSS-grid. Med kjennskapen jeg allerede hadde om flexbox virket det som et enklere alternativ med bra resultat.</dd>
+                    <dt>SVG og Canvas</dt>
+                        <dd>Kunstverket til venstre på siden er satt sammen med forskjellige form-tagger i en svg-ramme i HTML. Formene jeg har brukt er sirkel, rektangel, mangekant og bane. Dette gjør at hvert enkelt synlige objekt på kunstverket (fjell, himmel, sol osv.) kan aksesseres direkte med JavaScript. Med jQuery animeres objektene i svg-taggen hver for seg når musen beveger seg inn i og ut av rammen svg-taggen setter opp. Objektene forsvinner aldri fra siden, de blir bare skjult og så vist igjen.</dd>
+                        <dd>I kunstverket til høyre har jeg brukt HTML Canvas. Canvas har ikke lag eller objekter, så enkeltobjektene kan ikke aksesseres på noen måte. For å animere overgangen mellom sommer og vinter må man derfor cleare hele rammen og tegne på nytt. Animasjonen må også gjøres manuelt, siden jeg ikke kan bruke jQuery-biblioteket med tilhørende animasjoner på enkeltobjektene. Siden skriptet heller ikke vet hva i canvas-rammen musen eventuelt vil klikke på, er den eneste større forskjellen på de to kunstverkene at fjellene ikke endrer farge når de blir trykket på. Dette er en av svakhetene ved canvas, og krever en del jobb å komme seg rundt.</dd>
+                    <dt>jQuery</dt>
+                        <dd>På SVG-kunstverket kunne jeg bruke jQuery til å legge til animasjoner på hvert enkelt objekt i kunstverket. Så fort dokumentet er lastet inn, skjules de objektene som tilhører vinterlandskapet. Alle objektene aksesseres med id, klasse eller taggen (samme som CSS). Skriptet «hører» etter om musen beveger seg inn på SVG-rammen, ut av SVG-rammen eller klikker på et av fjellene. Når en av disse hendelsene skjer, kan skriptet gjøre en rekke ting med objektene. I dette kunstverkets tilfelle blir objektene skjult gradvis, vist gradvis eller får oppdatert CSS slik at objektet for eksempel endrer farge.</dd>
+                    <dt>Testing</dt>
+                        dd>Nettsiden er testet i Google Chrome 84.0.4147.135 og Mozilla Firefox 80.0. Siden har relativt liten funksjonalitet, så det lille det er å teste kan gjøres manuelt ved å prøve ut funksjonaliteten i begge nettleserne. Nettleserne laster HTML, CSS og JavaScript forskjellig, men da jeg sjekket i Firefox oppførte siden seg likt som jeg forventet fra Chrome.</dd>
+                    <dt>Hjelpemidler og kodekilder</dt>
+                    <dd>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout</dd>
+                        <dd>https://www.browserstack.com/cross-browser-testing</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes</dd>
+                        <dd>https://www.w3schools.com/tags/canvas_createlineargradient.asp</dd>
+                        <dd>https://stackoverflow.com/questions/20211890/svg-change-fill-color-on-button-click/20212046</dd>
+                        <dd>https://www.w3schools.com/html/html5_canvas.asp</dd>
+                        <dd>https://www.w3schools.com/html/html5_svg.asp</dd>
+                        <dd>https://www.w3schools.com/graphics/svg_intro.asp</dd>
+                        <dd>https://www.w3schools.com/tags/canvas_createradialgradient.asp</dd>
+                        <dd>https://www.w3schools.com/jquery/</dd>
+                        <dd>https://css-tricks.com/using-svg/</dd>
+                        <dd>https://css-tricks.com/almanac/properties/f/fill/</dd>
+                        <dd>https://css-tricks.com/svg-properties-and-css/</dd>
+                </dl>
+            </div>
+            <script src="js/documentation.js"></script>
+        </main>
+        <footer>
+            <p>Claude Potet 2020</p>
+        </footer>
     </body>
 </html>
