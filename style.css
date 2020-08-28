@@ -16,7 +16,7 @@ nav > a{
 
 nav{
     text-align: center;
-    padding: 1em;
+    padding: 1em 3em;
 }
 
 .wrapper {
@@ -59,7 +59,7 @@ svg{
     width: 100%;
     padding: 5px;
     text-align: center;
-    background-color: #e5eecc;
+    background-color: #cdcdcd;
   }
   
 #doc {
@@ -69,6 +69,12 @@ svg{
 
 #docBtn{
 
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 2em;
 }
 
 @media all and (min-width: 768px) {
