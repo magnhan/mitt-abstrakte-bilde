@@ -14,4 +14,9 @@ $(document).ready(function(){
         $("#sun").fadeIn();
         $("#snow").fadeOut();
     });
+    $(".mountain").click(function(){
+        $(".mountain").css({
+            fill:"#f3f3f3"
+        });
+    });
 })

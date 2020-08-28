@@ -7,7 +7,16 @@
 body {
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     background-color: white;
-    padding: 10em;
+}
+
+nav > a{
+    color: black;
+    font-weight: bold;
+}
+
+nav{
+    text-align: center;
+    padding: 1em;
 }
 
 .wrapper {
@@ -18,8 +27,9 @@ body {
 
 .art{
     flex-direction: column;
-    padding: 2em;
+    padding: 0em;
     text-align: center;
+    align-content: center;
 }
 
 header > h1{
@@ -37,16 +47,48 @@ svg{
     box-shadow: 0px 0px 10px black;
 }
 
+#svgBird{
+    position: absolute;
+}
+
 #artCanvas{
     box-shadow: 0px 0px 10px black;
 }
 
+#doc, #docBtn {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+  }
+  
+#doc {
+    padding: 50px;
+    display: none;
+}
+
+#docBtn{
+
+}
+
 @media all and (min-width: 768px) {
+    nav > a{
+        color: white;
+        font-weight: bold;
+    }
+
     body{
-        padding: 0em 4em;
+        padding: 0em;
         background-color: black;
     }
     main{
         background-color: white;
+    }
+
+    .art{
+        flex-direction: column;
+        padding: 2em;
+        text-align: center;
+        max-width: 50%;
     }
 }
