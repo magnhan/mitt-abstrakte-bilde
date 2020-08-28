@@ -69,9 +69,34 @@
             </div>
             <div id="docBtn">Dokumentasjon</div>
             <div id="doc">
-                <ul>
-                    <li>Kilder: https://www.w3schools.com/html/html5_canvas.asp</li>
-                </ul>
+                <dl>
+                    <dt>Flexbox og CSS-grid</dt>
+                        <dd>Jeg valgte å bruke flexbox fordi jeg kun ønsket å plassere elementene på siden i én retning av gangen. Kunstverk m/ tittel og bildetekst skulle i hovedsak stå side om side, mens elementene som inngår i hvert kunstverk skulle stå over hverandre (tittel, kunstverk og bildetekst). Derfor brukte jeg to wrappere for å justere de i retningene de skulle stå. Jeg brukte også flexbox til å justere navigasjonsbaren slik at alle elementene var jevnt fordelt utover bredden til skjermen. Om jeg hadde valgt CSS-grid for å justere kunstverkene, hadde jeg måttet dele opp kunstverkene i tittel, kunst og bildetekst og så justert de seks elementene i samme CSS-grid. Med kjennskapen jeg allerede hadde om flexbox virket det som et enklere alternativ med bra resultat.</dd>
+                    <dt>SVG og Canvas</dt>
+                        <dd>Kunstverket til venstre på siden er satt sammen med forskjellige form-tagger i en svg-ramme i HTML. Formene jeg har brukt er sirkel, rektangel, mangekant og bane. Dette gjør at hvert enkelt synlige objekt på kunstverket (fjell, himmel, sol osv.) kan aksesseres direkte med JavaScript. Med jQuery animeres objektene i svg-taggen hver for seg når musen beveger seg inn i og ut av rammen svg-taggen setter opp. Objektene forsvinner aldri fra siden, de blir bare skjult og så vist igjen.</dd>
+                        <dd>I kunstverket til høyre har jeg brukt HTML Canvas. Canvas har ikke lag eller objekter, så enkeltobjektene kan ikke aksesseres på noen måte. For å animere overgangen mellom sommer og vinter må man derfor cleare hele rammen og tegne på nytt. Animasjonen må også gjøres manuelt, siden jeg ikke kan bruke jQuery-biblioteket med tilhørende animasjoner på enkeltobjektene. Siden skriptet heller ikke vet hva i canvas-rammen musen eventuelt vil klikke på, er den eneste større forskjellen på de to kunstverkene at fjellene ikke endrer farge når de blir trykket på. Dette er en av svakhetene ved canvas, og krever en del jobb å komme seg rundt.</dd>
+                    <dt>jQuery</dt>
+                        <dd>På SVG-kunstverket kunne jeg bruke jQuery til å legge til animasjoner på hvert enkelt objekt i kunstverket. Så fort dokumentet er lastet inn, skjules de objektene som tilhører vinterlandskapet. Alle objektene aksesseres med id, klasse eller taggen (samme som CSS). Skriptet «hører» etter om musen beveger seg inn på SVG-rammen, ut av SVG-rammen eller klikker på et av fjellene. Når en av disse hendelsene skjer, kan skriptet gjøre en rekke ting med objektene. I dette kunstverkets tilfelle blir objektene skjult gradvis, vist gradvis eller får oppdatert CSS slik at objektet for eksempel endrer farge.</dd>
+                    <dt>Testing</dt>
+                        dd>Nettsiden er testet i Google Chrome 84.0.4147.135 og Mozilla Firefox 80.0. Siden har relativt liten funksjonalitet, så det lille det er å teste kan gjøres manuelt ved å prøve ut funksjonaliteten i begge nettleserne. Nettleserne laster HTML, CSS og JavaScript forskjellig, men da jeg sjekket i Firefox oppførte siden seg likt som jeg forventet fra Chrome.</dd>
+                    <dt>Hjelpemidler og kodekilder</dt>
+                    <dd>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout</dd>
+                        <dd>https://www.browserstack.com/cross-browser-testing</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event</dd>
+                        <dd>https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes</dd>
+                        <dd>https://www.w3schools.com/tags/canvas_createlineargradient.asp</dd>
+                        <dd>https://stackoverflow.com/questions/20211890/svg-change-fill-color-on-button-click/20212046</dd>
+                        <dd>https://www.w3schools.com/html/html5_canvas.asp</dd>
+                        <dd>https://www.w3schools.com/html/html5_svg.asp</dd>
+                        <dd>https://www.w3schools.com/graphics/svg_intro.asp</dd>
+                        <dd>https://www.w3schools.com/tags/canvas_createradialgradient.asp</dd>
+                        <dd>https://www.w3schools.com/jquery/</dd>
+                        <dd>https://css-tricks.com/using-svg/</dd>
+                        <dd>https://css-tricks.com/almanac/properties/f/fill/</dd>
+                        <dd>https://css-tricks.com/svg-properties-and-css/</dd>
+                </dl>
             </div>
             <script src="js/documentation.js"></script>
         </main>
